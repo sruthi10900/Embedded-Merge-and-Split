@@ -1,0 +1,432 @@
+body {
+    padding: 0px 0px 0px 0px;
+}
+
+::-webkit-scrollbar { display: none; } /* Hide scrollbar for chrome */
+
+.panelStyling {
+    position: fixed;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: lightgray;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+}
+
+ 
+
+.resizerStyling {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    background-color: darkslategray;
+}
+
+ 
+
+#outer_filter_panel {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 20%;
+    background-color: white;
+}
+
+#outer_filter_panel_svg {
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    left: -100%;
+    transition-duration: 0.3s;
+}
+
+#resizer {
+    top: 0%;
+    left: 20%;
+    height: 100%;
+    width: 4px;
+    cursor: e-resize;
+}
+
+#bottom_graph_panel {
+    top: 60%;
+    left: 20%;
+    height: 40%;
+    width: 80%;
+    background-color: white;
+}
+
+#resizer2 {
+    top: 60%;
+    left: 20%;
+    height: 4px;
+    width: 80%;
+    cursor: n-resize;
+}
+
+#right_map_panel {
+    top: 0%;
+    left: 60%;
+    height: 60%;
+    width: 40%;
+    background-color: lightblue;
+}
+
+#resizer3 {
+    top: 0%;
+    left: 60%;
+    height: 60%;
+    width: 4px;
+    cursor: e-resize;
+}
+
+#top_cluster_panel {
+    top: 0%;
+    left: 20%;
+    height: 30%;
+    width: 40%;
+    background-color: white;
+}
+
+#resizer4 {
+    top: 30%;
+    left: 20%;
+    height: 4px;
+    width: 40%;
+    cursor: n-resize;
+}
+
+#middle_graph_panel {
+    top: 30%;
+    left: 20%;
+    height: 30%;
+    width: 40%;
+    background-color: white;
+}
+
+svg {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+#filterHeading {
+    position: fixed;
+    width: 20%;
+    height: 30%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+/*    border-bottom: 1px solid #ccc;*/
+    z-index: 100;
+    color: #666;
+    /*box-shadow: 0px 2px 10px #ccc;
+*/}
+
+.panelHeading {
+    padding: 0px 0px 2px 0px;
+    margin: 0px 5px 0px 5px;
+    font-weight: 600;
+}
+
+#searchToolText {
+    padding: 3px 0px 2px 0px;
+    margin: 0px 5px 0px 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#searchField {
+    padding: 5px 5px 5px 5px;
+    margin: 0px 5px 0px 5px;
+    width: calc(100% - 25px);
+}
+
+#showAllData {
+    margin: 20px 5px 0px 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.grayLine {
+    margin: 5px 0px 5px 0px; 
+    border: 1px dashed #ccc;
+}
+
+#confidenceTitle {
+    margin: 0px 5px 0px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#confidenceLegendContainer {
+    display: flex;
+    flex-flow:row;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;    
+    width: 100%;
+}
+
+#confidenceLegend {
+    width: 100%;
+    top: 75%;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#firstConfidence, #secondConfidence, #thirdConfidence, #fourthConfidence, #fifthConfidence {
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 2px;
+}
+
+#firstCircle, #secondCircle, #thirdCircle, #fourthCircle, #fifthCircle {
+    border-radius: 7px;
+    display: inline;
+    font-size: 5px;
+}
+
+#firstCircle {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #fff;
+}
+
+#secondCircle {
+    background-color: #ccc;
+    border: 1px solid #888;
+    color: #ccc;
+}
+
+#thirdCircle {
+    background-color: #888;
+    border: 1px solid #555;
+    color: #888;
+}
+
+#fourthCircle {
+    background-color: #555;
+    border: 1px solid black;
+    color: #555;
+}
+
+#fifthCircle {
+    background-color: #000;
+    border: 1px solid black;
+    color: #000;
+}
+
+.confidenceLegendText {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 8px;
+    text-anchor: middle;
+}
+
+
+#Data_Columns_Div {
+    position: absolute;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    top: 30%;
+}
+
+#CategoricalDataHeading, #NumericDataHeading {
+    position: fixed;
+    background-color: lightgray;
+    width: 100%;
+    padding: 5px;
+    height: 20px;
+    border-top: 1px solid gray;
+    border-bottom: 1px dashed gray;
+    font-size: 14px;
+}
+
+#NumericDataHeading {
+    top: 65%;
+}
+
+#CategoricalDataContainer{
+    position: fixed;
+    z-index: -10;
+    width: 20%;
+    height: 35%;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#NumericDataContainer {
+    position: fixed;
+    z-index: -5;
+    top: 65%;
+    width: 20%;
+    height: 35%;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+#CategoricalColumns, #NumericColumns {
+    
+    margin-top: 24px;
+    padding: 6px;
+}    
+
+
+#CategoricalColumnsSVG, #NumericColumnsSVG {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: -5;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+
+#dropdown1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+}
+
+#middle_graph_panel_container, #right_map_panel_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 200px;
+}
+
+#top_cluster_panel_container {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 200px;
+}
+
+#bottom_graph_panel_barChart_container {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 200px;
+}
+
+.barChartRectangles:hover {
+    fill: rgb(7,77,101);
+    cursor: move;
+}
+
+.brush rect.selection {
+    fill: steelblue;
+    fill-opacity: 0.25;
+    stroke: none;
+  }
+  
+#rec{
+    width: 390px; height: 347px; padding: 0.5em; fill-opacity: 0.1;
+
+    position:relative;
+    bottom:12px;
+    left:30px;
+  
+}
+
+#map_tooltip {
+  position: absolute;
+  text-align: center;
+  color: white;
+  width: auto;
+  height: auto;
+  padding: 6px;
+  font: 9px sans-serif;
+  background: black;
+  border: 0px;
+  border-radius: 3px;
+  pointer-events: none;
+}
+#map_tooltip:after {
+  left: 40%;
+  top: 116.5%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #000;
+  border-width: 10px;
+  margin-top: -10px;
+}
+
+/* #slider-range-max {
+    position: relative;
+    height:20px;
+    width: 50px;
+    bottom:10px;
+    top: 2000px;
+}
+#lab { 
+    position: absolute;
+    
+    top: 2000px;
+} */
+
+.progress-meter .background {
+    fill: none;
+  }
+  
+  .progress-meter .foreground {
+    fill: white;
+  }
+  
+  .progress-meter text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+
+  #loadingBar {
+      transition-duration: 0.3s;
+  }
+
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: steelblue;
+}
+
+.focus text {
+    font-size: 14px;
+}
+
+.tooltip {
+    stroke: #000;
+}
+
+.tooltip-date, .tooltip-value {
+    font-weight: bold;
+}
